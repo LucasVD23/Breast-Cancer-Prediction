@@ -15,7 +15,7 @@ from sklearn import svm
 from sklearn import metrics
 
 
-data_cancer = shuffle(pd.read_csv("D:/Windows/Documentos/AM1/dataR2.csv"),random_state = 15)
+data_cancer = shuffle(pd.read_csv("dataR2.csv"),random_state = 15)
 
 #Classificadores usados
 dtc = DecisionTreeClassifier()

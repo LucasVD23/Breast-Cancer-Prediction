@@ -59,7 +59,12 @@ classifiers = {'Decision Tree': dtc, 'RandomForest': rfc, 'KNN': knnc, 'SVM': sv
 fb_scorer = metrics.make_scorer(metrics.fbeta_score,beta=1.5)
 kf = KFold(n_splits=5,shuffle = False)
 
-cfs_fbetas = {}
+melhor_cf_por_k = dtc
+melhor_score = 0
+melhor_conj_atributos = []
+melhores_metricas = {}
+conjuntos_atts =[]
+
 for i in classifiers:
     print("-----------------------" + i + "---------------------")
     cf = classifiers[i]
@@ -98,4 +103,18 @@ for i in classifiers:
     print("média das f_betas: " + str(np.mean(fb_scores)))
     print("média das AUCs: " + str(np.mean(auc)))
 
-    cfs_fbetas[i] = np.mean(fb_scores)
+    if(np.mean(fb_scores) > melhor_score and np.mean(especificidade) > 0.0):
+          melhor_cf_por_k = cf
+          melhores_metricas = {'acuracias':np.mean(acuracias), 'revocacos':np.mean(revocs),
+                               'precisoes' : np.mean(precisao), 'especificidades':np.mean(especificidade),
+                               'f_betas': np.mean(fb_scores), 'AUCs': np.mean(auc)}
+          melhor_score = np.mean(fb_scores)
+
+print("MELHOR CLASSIFICADOR")
+print(melhor_cf_por_k)
+print("média das acuracias: " + str(melhores_metricas['acuracias']))
+print("média das revocações: " + str(melhores_metricas['revocacos']))
+print("média das precisões: " + str(melhores_metricas['precisoes']))
+print("média das especificidades: " + str(melhores_metricas['especificidades']))
+print("média das f_betas: " + str(melhores_metricas['f_betas']))
+print("média das AUCs: " + str(melhores_metricas['AUCs']))
