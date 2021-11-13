@@ -8,7 +8,7 @@ from sklearn.utils import shuffle
 
 data_cancer = shuffle(pd.read_csv("D:/Windows/Documentos/AM1/dataR2.csv"))
 
-#Idade: atributo numérico discreto, o resto (tirando a classe) é contínuo o resto é ratio
+#Idade: atributo numérico discreto, o resto (tirando a classe) é contínuo 
 #Atributo Alvo = 1 para paciente saudável, 2 para paciente com câncer
 
 #sumarização
