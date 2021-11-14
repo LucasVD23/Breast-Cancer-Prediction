@@ -24,7 +24,7 @@ Link para o Dataset utilizado: [Breast Cancer Coimbra Data Set](https://archive.
 ```KNN_atributos_maior_correlacao.py```
 
 * Arquivos para 4 estapas de testes descritas no artigo e mencionadas acima:
-    - Teste com todos os classifcadores, atributos do artigo e 4 atributos com maior relação: [colab](https://colab.research.google.com/drive/1PEY1pvQlbZrHScX24N77GFTGHzdDFKbC#scrollTo=knsQYtUBs34q) (tempo de execução de 15 minutos para cada teste aproximadamente)
+    - Teste com todos os classifcadores, atributos do artigo e 4 atributos com maior relação: [colab](https://colab.research.google.com/drive/1PEY1pvQlbZrHScX24N77GFTGHzdDFKbC?usp=sharing) (tempo de execução de 15 minutos para cada teste aproximadamente)
     - Teste pela procura do melhor classificador e melhor conjunto de atributos utilizando *SelectKBest*: ```testes_selectKBest.py``` (tempo de execução de 1h15 min aproximadamente)
 
 (Atenção, teste utilizando *SelectKBest* foi deixado avulso pelo seu tamanho e tempo de execução elevados).
