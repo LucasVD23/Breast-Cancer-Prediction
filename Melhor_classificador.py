@@ -56,9 +56,11 @@ for train_index, test_index in kf.split(previsores):
     #Especificidade — TN / (TN + FP)
     especificidade.append(TN / (TN + FP))
         
-    fb_scores.append(metrics.fbeta_score(y_test,y_pred,1.5))
+    fb_scores.append(metrics.fbeta_score(y_test,y_pred,beta = 1.5))
     auc.append(metrics.roc_auc_score(y_test, y_pred))
 
+print("CLASSIFICADOR: " + str(knnc))
+print("Usando os 4 atributos do artigo: ['Idade', 'BMI', 'Glucose', 'Resistin']")
 print("média das acuracias: " + str(np.mean(acuracias)))
 print("média das revocações: " + str(np.mean(revocs)))
 print("média das precisões: " + str(np.mean(precisao)))
